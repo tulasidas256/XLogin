@@ -7,14 +7,17 @@ function App() {
   const [password, setpassword] = useState("");
   const [err, setErr] = useState();
 
+  // fuunction for handle username
   const handleUsername = (e) => {
     setusername(e.target.value);
   };
 
+  // fuunction for handle password
   const handlePassword = (e) => {
     setpassword(e.target.value);
   };
-
+  
+  // fuunction for handle submit
   const submitHandler = (e) => {
     e.preventDefault();
     if (username === "username" && password === "password") {
@@ -37,6 +40,7 @@ function App() {
             onChange={handleUsername}
             name="username"
             type="text"
+            required
           />
         </label>
         <br />
@@ -48,6 +52,7 @@ function App() {
             name="password"
             onChange={handlePassword}
             type="password"
+            required
           />
         </label>
         <br />
