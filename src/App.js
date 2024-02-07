@@ -5,7 +5,8 @@ function App() {
 
   const [username,setusername] = useState("");
   const [password, setpassword] = useState("");
-  const [err, setErr] = useState();
+  const [isSubmit, setisSubmit] = useState(false);
+  const [err, setErr] = useState(false);
 
   // fuunction for handle username
   const handleUsername = (e) => {
@@ -21,18 +22,18 @@ function App() {
   const submitHandler = (e) => {
     e.preventDefault();
     if (username === "user" && password === "password") {
-      setErr(true);
+      setisSubmit(true);
     } else {
-      setErr(false);
+      setErr(true);
     }
   };
 
   return (
     <>
     <h1>Login Page</h1>
-      {!err ? (
+      {!isSubmit ? (
         <form onSubmit={submitHandler}>
-        {err === false ? (<p>Invalid username or password</p>):<></>}
+        {err ? (<p>Invalid username or password</p>):<></>}
         <label htmlFor="username">
           UserName:
           <input
@@ -60,7 +61,9 @@ function App() {
         <button type='submit'>Submit</button>
       </form>
       ):(
-        <p>"Welcome, user!"</p>
+        <div>
+          <p>Welcome, {username}!</p>
+        </div>
       )
       }
     </>
