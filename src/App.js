@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
 
-  const [username,setusername] = useState("");
+  const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [isSubmit, setisSubmit] = useState(false);
   const [err, setErr] = useState(false);
@@ -17,7 +17,7 @@ function App() {
   const handlePassword = (e) => {
     setpassword(e.target.value);
   };
-  
+
   // fuunction for handle submit
   const submitHandler = (e) => {
     e.preventDefault();
@@ -30,12 +30,11 @@ function App() {
 
   return (
     <>
-    <h1>Login Page</h1>
+      <h1>Login Page</h1>
       {!isSubmit ? (
         <form onSubmit={submitHandler}>
-        {err ? (<p>Invalid username or password</p>):<></>}
-        <label htmlFor="username">
-          Username:
+          {err ? (<p>Invalid username or password</p>) : <></>}
+          <label htmlFor="username">Username:</label>
           <input
             id="username"
             onChange={handleUsername}
@@ -44,10 +43,8 @@ function App() {
             placeholder="username"
             required
           />
-        </label>
-        <br />
-        <label htmlFor="password">
-          Password:
+          <br />
+          <label htmlFor="password">Password:</label>
           <input
             id="password"
             name="password"
@@ -56,11 +53,10 @@ function App() {
             placeholder="password"
             required
           />
-        </label>
-        <br />
-        <button type='submit'>Submit</button>
-      </form>
-      ):(
+          <br />
+          <button type='submit'>Submit</button>
+        </form>
+      ) : (
         <div>
           <p>Welcome, {username}!</p>
         </div>
