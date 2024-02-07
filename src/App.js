@@ -35,7 +35,7 @@ function App() {
         <form onSubmit={submitHandler}>
         {err ? (<p>Invalid username or password</p>):<></>}
         <label htmlFor="username">
-          UserName:
+          Username:
           <input
             id="username"
             onChange={handleUsername}
