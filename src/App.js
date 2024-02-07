@@ -20,7 +20,7 @@ function App() {
   // fuunction for handle submit
   const submitHandler = (e) => {
     e.preventDefault();
-    if (username === "username" && password === "password") {
+    if (username === "user" && password === "password") {
       setErr(true);
     } else {
       setErr(false);
@@ -40,10 +40,10 @@ function App() {
             onChange={handleUsername}
             name="username"
             type="text"
+            placeholder="username"
             required
           />
         </label>
-        <br />
         <br />
         <label htmlFor="password">
           Password:
@@ -52,12 +52,12 @@ function App() {
             name="password"
             onChange={handlePassword}
             type="password"
+            placeholder="password"
             required
           />
         </label>
         <br />
-        <br />
-        <button onClick={submitHandler}>Submit</button>
+        <button type='submit'>Submit</button>
       </form>
       ):(
         <p>"Welcome, user!"</p>
